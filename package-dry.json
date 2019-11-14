@@ -1,0 +1,13 @@
+{ 
+  "name": "zzplayas_template", 
+  "version": "2.0.0", 
+  "description": "o", 
+  "main": "zzplayas.js", 
+  "author": "denoflions", 
+  "credits": "a", 
+  "license": "a", 
+  "core": "a", 
+  "dry": { 
+    "extends": "./ModLoader64/package-dry.json" 
+  } 
+} 
