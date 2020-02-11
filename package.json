@@ -1,0 +1,20 @@
+{
+  "name": "zzplayas_template",
+  "version": "1.0.0",
+  "description": "Template for making a .pak file for ModLoader out of a zzplayas zobj.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hylian-modding/zzplayas_modloader_template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hylian-modding/zzplayas_modloader_template/issues"
+  },
+  "homepage": "https://github.com/hylian-modding/zzplayas_modloader_template#readme"
+}
