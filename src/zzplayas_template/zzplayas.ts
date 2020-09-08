@@ -20,7 +20,7 @@ interface MM_ZZ {
 }
 
 class zzdata {
-  OcarinaofTime!: OotO_ZZ;
+  OcarinaOfTime!: OotO_ZZ;
   MajorasMask!: MM_ZZ;
 }
 
