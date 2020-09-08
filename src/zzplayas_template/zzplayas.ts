@@ -4,13 +4,24 @@ import { OotOnlineEvents } from './OotoAPI/OotoAPI';
 import path from 'path';
 import { IOOTCore } from 'modloader64_api/OOT/OOTAPI';
 import { InjectCore } from 'modloader64_api/CoreInjection';
+import { MMOnlineEvents } from './MMOAPI/MMOAPI';
+
+interface OotO_ZZ {
+  adult_model: string;
+  child_model: string;
+  anim_file: string;
+  adult_icon: string;
+  child_icon: string;
+}
+
+interface MM_ZZ {
+  child_model: string;
+  anim_file: string;
+}
 
 class zzdata {
-  adult_model!: string;
-  child_model!: string;
-  anim_file!: string;
-  adult_icon!: string;
-  child_icon!: string;
+  OcarinaofTime!: OotO_ZZ;
+  MajorasMask!: MM_ZZ;
 }
 
 class zzplayas implements IPlugin {
@@ -22,27 +33,43 @@ class zzplayas implements IPlugin {
   preinit(): void { }
   init(): void {
     let zz: zzdata = (this as any)['metadata']['zzplayas'];
-    if (zz.adult_model !== '') {
-      bus.emit(
-        OotOnlineEvents.CUSTOM_MODEL_APPLIED_ADULT,
-        path.resolve(path.join(__dirname, zz.adult_model))
-      );
-    }
-    if (zz.child_model !== '') {
-      bus.emit(
-        OotOnlineEvents.CUSTOM_MODEL_APPLIED_CHILD,
-        path.resolve(path.join(__dirname, zz.child_model))
-      );
-    }
-    if (zz.anim_file !== '') {
-      bus.emit(OotOnlineEvents.CUSTOM_MODEL_APPLIED_ANIMATIONS, path.resolve(path.join(__dirname, zz.anim_file)));
-    }
-    if (zz.adult_icon !== '') {
-      bus.emit(OotOnlineEvents.CUSTOM_MODEL_APPLIED_ICON_ADULT, path.resolve(path.join(__dirname, zz.adult_icon)));
-    }
-    if (zz.child_icon !== '') {
-      bus.emit(OotOnlineEvents.CUSTOM_MODEL_APPLIED_ICON_CHILD, path.resolve(path.join(__dirname, zz.child_icon)));
-    }
+    let OOT = () => {
+      if (zz.OcarinaofTime.adult_model !== '') {
+        bus.emit(
+          OotOnlineEvents.CUSTOM_MODEL_APPLIED_ADULT,
+          path.resolve(path.join(__dirname, zz.OcarinaofTime.adult_model))
+        );
+      }
+      if (zz.OcarinaofTime.child_model !== '') {
+        bus.emit(
+          OotOnlineEvents.CUSTOM_MODEL_APPLIED_CHILD,
+          path.resolve(path.join(__dirname, zz.OcarinaofTime.child_model))
+        );
+      }
+      if (zz.OcarinaofTime.anim_file !== '') {
+        bus.emit(OotOnlineEvents.CUSTOM_MODEL_APPLIED_ANIMATIONS, path.resolve(path.join(__dirname, zz.OcarinaofTime.anim_file)));
+      }
+      if (zz.OcarinaofTime.adult_icon !== '') {
+        bus.emit(OotOnlineEvents.CUSTOM_MODEL_APPLIED_ICON_ADULT, path.resolve(path.join(__dirname, zz.OcarinaofTime.adult_icon)));
+      }
+      if (zz.OcarinaofTime.child_icon !== '') {
+        bus.emit(OotOnlineEvents.CUSTOM_MODEL_APPLIED_ICON_CHILD, path.resolve(path.join(__dirname, zz.OcarinaofTime.child_icon)));
+      }
+    };
+    let MM = () =>{
+      if (zz.MajorasMask.child_model !== '') {
+        bus.emit(
+          MMOnlineEvents.CUSTOM_MODEL_APPLIED_CHILD,
+          path.resolve(path.join(__dirname, zz.MajorasMask.child_model))
+        );
+      }
+      if (zz.MajorasMask.anim_file !== '') {
+        bus.emit(MMOnlineEvents.CUSTOM_MODEL_APPLIED_ANIMATIONS, path.resolve(path.join(__dirname, zz.MajorasMask.anim_file)));
+      }
+    };
+
+    OOT();
+    MM();
   }
   postinit(): void { }
   onTick(): void { }

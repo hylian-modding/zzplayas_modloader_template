@@ -6,12 +6,18 @@
   "author": "Team-Ooto",
   "credits": "",
   "license": "GPL-3.0",
-  "core": "OcarinaofTime",
+  "core": ["OcarinaofTime", "MajorasMask"],
   "zzplayas": {
-    "adult_model": "",
-    "child_model": "",
-    "anim_file": "",
-    "adult_icon": "",
-    "child_icon": ""
+    "OcarinaOfTime": {
+      "adult_model": "",
+      "child_model": "",
+      "anim_file": "",
+      "adult_icon": "",
+      "child_icon": ""
+    },
+    "MajorasMask": {
+      "child_model": "",
+      "anim_file": ""
+    }
   }
 }
