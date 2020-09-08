@@ -34,26 +34,26 @@ class zzplayas implements IPlugin {
   init(): void {
     let zz: zzdata = (this as any)['metadata']['zzplayas'];
     let OOT = () => {
-      if (zz.OcarinaofTime.adult_model !== '') {
+      if (zz.OcarinaOfTime.adult_model !== '') {
         bus.emit(
           OotOnlineEvents.CUSTOM_MODEL_APPLIED_ADULT,
-          path.resolve(path.join(__dirname, zz.OcarinaofTime.adult_model))
+          path.resolve(path.join(__dirname, zz.OcarinaOfTime.adult_model))
         );
       }
-      if (zz.OcarinaofTime.child_model !== '') {
+      if (zz.OcarinaOfTime.child_model !== '') {
         bus.emit(
           OotOnlineEvents.CUSTOM_MODEL_APPLIED_CHILD,
-          path.resolve(path.join(__dirname, zz.OcarinaofTime.child_model))
+          path.resolve(path.join(__dirname, zz.OcarinaOfTime.child_model))
         );
       }
-      if (zz.OcarinaofTime.anim_file !== '') {
-        bus.emit(OotOnlineEvents.CUSTOM_MODEL_APPLIED_ANIMATIONS, path.resolve(path.join(__dirname, zz.OcarinaofTime.anim_file)));
+      if (zz.OcarinaOfTime.anim_file !== '') {
+        bus.emit(OotOnlineEvents.CUSTOM_MODEL_APPLIED_ANIMATIONS, path.resolve(path.join(__dirname, zz.OcarinaOfTime.anim_file)));
       }
-      if (zz.OcarinaofTime.adult_icon !== '') {
-        bus.emit(OotOnlineEvents.CUSTOM_MODEL_APPLIED_ICON_ADULT, path.resolve(path.join(__dirname, zz.OcarinaofTime.adult_icon)));
+      if (zz.OcarinaOfTime.adult_icon !== '') {
+        bus.emit(OotOnlineEvents.CUSTOM_MODEL_APPLIED_ICON_ADULT, path.resolve(path.join(__dirname, zz.OcarinaOfTime.adult_icon)));
       }
-      if (zz.OcarinaofTime.child_icon !== '') {
-        bus.emit(OotOnlineEvents.CUSTOM_MODEL_APPLIED_ICON_CHILD, path.resolve(path.join(__dirname, zz.OcarinaofTime.child_icon)));
+      if (zz.OcarinaOfTime.child_icon !== '') {
+        bus.emit(OotOnlineEvents.CUSTOM_MODEL_APPLIED_ICON_CHILD, path.resolve(path.join(__dirname, zz.OcarinaOfTime.child_icon)));
       }
     };
     let MM = () =>{
