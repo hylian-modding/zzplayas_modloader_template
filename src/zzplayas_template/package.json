@@ -6,18 +6,48 @@
   "author": "Team-Ooto",
   "credits": "",
   "license": "GPL-3.0",
-  "core": ["OcarinaofTime", "MajorasMask"],
+  "core": [
+    "OcarinaofTime",
+    "MajorasMask"
+  ],
   "zzplayas": {
-    "OcarinaOfTime": {
-      "adult_model": "",
-      "child_model": "",
-      "anim_file": "",
-      "adult_icon": "",
-      "child_icon": ""
+    "OOT": {
+      "adult_model": [
+        {
+          "file": "",
+          "name": ""
+        }
+      ],
+      "child_model": [
+        {
+          "file": "",
+          "name": ""
+        }
+      ],
+      "anim_file": {
+        "file": "",
+        "name": ""
+      },
+      "colors": {
+        "kokiri": "",
+        "goron": "",
+        "zora": "",
+        "silver": "",
+        "golden": ""
+      },
+      "oot_script": "ootscript.js",
+      "options": {
+        "applyAnimBankOnEquip": false,
+        "applySoundOnEquip": false
+      }
     },
-    "MajorasMask": {
-      "child_model": "",
-      "anim_file": ""
+    "MM": {
+      "child_model": [
+        {
+          "file": "",
+          "name": ""
+        }
+      ]
     }
   }
 }
