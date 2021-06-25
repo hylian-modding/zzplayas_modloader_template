@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "zzplayas.js",
-  "author": "Team-Ooto",
+  "author": "",
   "credits": "",
   "license": "GPL-3.0",
   "core": [
@@ -35,6 +35,16 @@
         "zora": "",
         "silver": "",
         "golden": ""
+      },
+      "tunic_models_child": {
+        "kokiri": "",
+        "goron": "",
+        "zora": ""
+      },
+      "tunic_models_adult": {
+        "kokiri": "",
+        "goron": "",
+        "zora": ""
       },
       "oot_script": "ootscript.js",
       "options": {
