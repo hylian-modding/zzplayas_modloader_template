@@ -105,7 +105,6 @@ export default class ootscript implements IModelScript{
         switch(age){
             case Age.ADULT:
                 if (this.tunicRefs.get(Age.ADULT)!.length > 0){
-                    console.log(tunic);
                     let newRef = this.tunicRefs.get(Age.ADULT)![tunic];
                     newRef.script = this;
                     return newRef;
