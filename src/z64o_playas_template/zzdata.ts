@@ -20,6 +20,9 @@ export class zzdata_mm{
   goron_model_2!: zzentry[];
   zora_model!: zzentry[];
   deity_model!: zzentry[];
+  mm_script!: string;
+  anim_file!: zzentry;
+  options!: zzoptions;
 }
 
 export class zzentry {

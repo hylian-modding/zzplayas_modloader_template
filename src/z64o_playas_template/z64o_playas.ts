@@ -69,6 +69,10 @@ class z64o_playas implements IPlugin {
   private MM() {
     let zz: zzroot = (this as any)['metadata']['z64o_playas'];
     let script: IModelScript | undefined;
+    if (zz.MM.mm_script !== "") {
+      let s = require(path.resolve(__dirname, zz.MM.mm_script)).default;
+      script = new s((this as any)['metadata']['name'], zz.MM, this.ModLoader);
+    }
     if (zz.MM.child_model.length > 0) {
       for (let i = 0; i < zz.MM.child_model.length; i++) {
         if (zz.MM.child_model[i].file === "") continue;
@@ -151,6 +155,10 @@ class z64o_playas implements IPlugin {
         evt.script = script;
         bus.emit(Z64OnlineEvents.REGISTER_CUSTOM_MODEL, evt);
       }
+    }
+    if (zz.MM.anim_file.file !== '') {
+      console.log(`anim bank found: ${zz.MM.anim_file.file}`);
+      bus.emit(Z64OnlineEvents.CUSTOM_ANIMATION_BANK_REGISTER, new Z64_AnimationBank(zz.MM.anim_file.name, fse.readFileSync(path.resolve(path.join(__dirname, zz.MM.anim_file.file)))));
     }
   }
 }

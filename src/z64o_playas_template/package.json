@@ -9,6 +9,7 @@
   "core": [
     "Z64Lib"
   ],
+  "compression": "zip",
   "z64o_playas": {
     "OOT": {
       "adult_model": [
@@ -34,7 +35,11 @@
         "silver": "",
         "golden": ""
       },
-      "oot_script": "ootscript.js"
+      "oot_script": "ootscript.js",
+      "options": {
+        "applyAnimBankOnEquip": false,
+        "applySoundOnEquip": false
+      }
     },
     "MM": {
       "child_model": [
@@ -61,7 +66,7 @@
           "name": ""
         }
       ],
-	  "goron_model_2": [
+      "goron_model_2": [
         {
           "file": "",
           "name": ""
@@ -79,11 +84,11 @@
           "name": ""
         }
       ],
-      "mm_script": "mmcript.js"
-    },
-    "options": {
-      "applyAnimBankOnEquip": false,
-      "applySoundOnEquip": false
+      "mm_script": "mmscript.js",
+      "options": {
+        "applyAnimBankOnEquip": false,
+        "applySoundOnEquip": false
+      }
     }
   },
   "dependencies": {
