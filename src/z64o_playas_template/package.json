@@ -1,0 +1,92 @@
+{
+  "name": "z64o_playas_template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "z64o_playas.js",
+  "author": "ModLoader64",
+  "credits": "",
+  "license": "GPL-3.0",
+  "core": [
+    "Z64Lib"
+  ],
+  "z64o_playas": {
+    "OOT": {
+      "adult_model": [
+        {
+          "file": "",
+          "name": ""
+        }
+      ],
+      "child_model": [
+        {
+          "file": "",
+          "name": ""
+        }
+      ],
+      "anim_file": {
+        "file": "",
+        "name": ""
+      },
+      "colors": {
+        "kokiri": "",
+        "goron": "",
+        "zora": "",
+        "silver": "",
+        "golden": ""
+      },
+      "oot_script": "ootscript.js"
+    },
+    "MM": {
+      "child_model": [
+        {
+          "file": "",
+          "name": ""
+        }
+      ],
+      "adult_model": [
+        {
+          "file": "",
+          "name": ""
+        }
+      ],
+      "deku_model": [
+        {
+          "file": "",
+          "name": ""
+        }
+      ],
+      "goron_model_1": [
+        {
+          "file": "",
+          "name": ""
+        }
+      ],
+	  "goron_model_2": [
+        {
+          "file": "",
+          "name": ""
+        }
+      ],
+      "zora_model": [
+        {
+          "file": "",
+          "name": ""
+        }
+      ],
+      "deity_model": [
+        {
+          "file": "",
+          "name": ""
+        }
+      ],
+      "mm_script": "mmcript.js"
+    },
+    "options": {
+      "applyAnimBankOnEquip": false,
+      "applySoundOnEquip": false
+    }
+  },
+  "dependencies": {
+    "bson": "^4.5.3"
+  }
+}

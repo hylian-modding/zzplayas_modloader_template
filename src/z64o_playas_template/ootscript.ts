@@ -1,24 +1,28 @@
-import { Tunic } from "modloader64_api/OOT/OOTAPI";
+import { IOOTCore, Tunic } from "Z64Lib/API/OoT/OOTAPI";
 import { bus } from "modloader64_api/EventHandler";
-import { IModelReference, IModelScript, Z64OnlineEvents, Z64_AnimationBank } from "./OotoAPI/OotoAPI";
+import { IModelReference, IModelScript, Z64OnlineEvents, Z64_AnimationBank } from "./Z64API/Z64API";
 import { zzdata_oot } from "./zzdata";
 import fs from 'fs-extra';
 import path from 'path';
 import { IModLoaderAPI } from "modloader64_api/IModLoaderAPI";
 import zlib from 'zlib';
+import { AgeOrForm } from "Z64Lib/API/Common/Z64API";
 
 export default class ootscript implements IModelScript{
 
     name: string;
     zz: zzdata_oot;
     ModLoader!: IModLoaderAPI;
+    core!: IOOTCore;
     originalTunicColors!: Buffer;
     originalGauntletColors!: Buffer;
     rawSounds: any = {};
     hasEmbeddedSounds: boolean = false;
+    tunicRefs: Map<AgeOrForm, Array<IModelReference>> = new Map<AgeOrForm, Array<IModelReference>>();
 
     constructor(name: string, zz: zzdata_oot, ModLoader: IModLoaderAPI){
         this.name = name;
+        this.zz = zz;
         this.zz = zz;
         this.ModLoader = ModLoader;
         this.registerSoundPak();
@@ -98,6 +102,29 @@ export default class ootscript implements IModelScript{
         return ref;
     }
     onTunicChanged(ref: IModelReference, tunic: Tunic): IModelReference {
+        if (tunic > Tunic.ZORA) return ref;
+        let age: AgeOrForm = this.core.save.age;
+        switch(age){
+            case AgeOrForm.ADULT:
+                console.log(`onTunicChanged: ${AgeOrForm.ADULT}`)
+                if (this.tunicRefs.get(AgeOrForm.ADULT)!.length > 0){
+                    console.log("Adult Success!");
+                    let newRef = this.tunicRefs.get(age)![tunic];
+                    newRef.script = this;
+                    return newRef;
+                }
+                break;
+            case (AgeOrForm.CHILD):
+                console.log(`onTunicChanged: ${AgeOrForm.CHILD}`)
+                if (this.tunicRefs.get(age)!.length > 0){
+                    console.log("Child Success!");
+                    let newRef = this.tunicRefs.get(age)![tunic];
+                    newRef.script = this;
+                    return newRef;
+                }
+                break;
+        }
+
         return ref;
     }
     onHealthChanged(max: number, health: number, ref: IModelReference): IModelReference {

@@ -16,10 +16,11 @@
       "@sound/*": [
         "./build/emulator/*"
       ],
-      "@zzplayas_template/*": [
-        "./src/zzplayas_template/*"
+      "@z64o_playas_template/*": [
+        "./src/z64o_playas_template/*"
       ]
-    }
+    },
+    "noImplicitAny": false
   },
   "include": [
     "src/**/*.ts",
@@ -33,6 +34,7 @@
     "node_modules",
     "API",
     "build.ts",
-    "build"
+    "build",
+    "cores"
   ]
 }

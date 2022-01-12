@@ -1,3 +1,7 @@
 node_modules/
 dist/
 build/
+src/z64o_playas_tunic_test
+src/z64o_playas_test
+src/z64o_playas_blender_test
+src/z64o_playas_tunic_template
