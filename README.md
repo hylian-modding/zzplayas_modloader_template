@@ -7,11 +7,11 @@ Template for making a .pak file for ModLoader out of a zelda64 playas zobj.
 ## Goron Play-as
 Goron has two skeletons, "object_link_goron_1" & "object_link_goron_2". Alternatively, "Goron" & "Shield" is what I like to refer to them as. They are meant to be seperated into seperate objects for Z64O.
 
-In your blender file, select the "zzSkel" (Goron) skeleton and all the objects parented to it. Export it as "objex", but change the export settings to "selection only" to export only the "Goron" object. Afterwards, do the same for the "zzSkel2" (Shield) skeleton the parented objects and export only that selection into a seperate objex file. 
+In your blender file, select the "zzSkel" (Goron) skeleton and all the objects parented to it. Export it as "objex", but change the export settings to "selection only" to export only the "Goron" object. Afterwards, do the same for the "zzSkel2" (Shield) skeleton and the parented objects and export with "selection only" into a seperate objex file. 
 
 Once you have two exported files, one for "Goron" and the other for "Shield", you can then convert them each into a zobj using zzconvert. Now that you have two zobjs of both the "Goron" and "Shield" objects, put them in the template and write them into their slots in the package.json. 
 
-Below is a snipped of the package.json using the two Goron models:
+Below is a snipped of an example package.json using the two Goron models:
 
 ```
     "goron_model_1": [
