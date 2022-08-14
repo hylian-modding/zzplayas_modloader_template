@@ -41,7 +41,7 @@ class z64o_playas implements IPlugin {
     let script: IModelScript | undefined;
     if (zz.OOT.oot_script !== "") {
       let s = require(path.resolve(__dirname, zz.OOT.oot_script)).default;
-      script = new s((this as any)['metadata']['name'], zz.OOT, this.ModLoader);
+      script = new s((this as any)['metadata']['name'], zz.OOT, this.ModLoader, this.core.OOT!);
     }
     if (zz.OOT.adult_model.length > 0) {
       for (let i = 0; i < zz.OOT.adult_model.length; i++) {
@@ -71,7 +71,7 @@ class z64o_playas implements IPlugin {
     let script: IModelScript | undefined;
     if (zz.MM.mm_script !== "") {
       let s = require(path.resolve(__dirname, zz.MM.mm_script)).default;
-      script = new s((this as any)['metadata']['name'], zz.MM, this.ModLoader);
+      script = new s((this as any)['metadata']['name'], zz.MM, this.ModLoader, this.core.MM!);
     }
     if (zz.MM.child_model.length > 0) {
       for (let i = 0; i < zz.MM.child_model.length; i++) {

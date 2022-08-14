@@ -13,17 +13,18 @@ export default class mmscript implements IModelScript{
     name: string;
     zz: zzdata_mm;
     ModLoader!: IModLoaderAPI;
-    core!: IMMCore;
+    core: IMMCore;
     originalTunicColors!: Buffer;
     originalGauntletColors!: Buffer;
     rawSounds: any = {};
     hasEmbeddedSounds: boolean = false;
 
-    constructor(name: string, zz: zzdata_mm, ModLoader: IModLoaderAPI){
+    constructor(name: string, zz: zzdata_mm, ModLoader: IModLoaderAPI, core: IMMCore){
         this.name = name;
         this.zz = zz;
         this.zz = zz;
         this.ModLoader = ModLoader;
+        this.core = core;
         this.registerSoundPak();
     }
 
